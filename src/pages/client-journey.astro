@@ -1,0 +1,493 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="The Amagi Client Journey">
+
+<div class="wrap">
+
+  <!-- Hero -->
+  <header class="hero">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Amagi&nbsp;·&nbsp;Client Journey</span>
+    </div>
+    <h1>How care flows <em>through Amagi</em> — from first concern to lasting support.</h1>
+    <p class="lede">
+      Amagi helps frontline care staff notice, document, and act on the early signs of cognitive change in
+      older adults. This is the seven-stage journey a client travels through, and the people who walk it with them.
+    </p>
+  </header>
+
+  <!-- Cast -->
+  <section class="cast" aria-labelledby="cast-heading">
+    <h2 id="cast-heading">The people involved</h2>
+    <div class="cast-grid">
+      <div class="actor">
+        <span class="actor-dot staff" aria-hidden="true"></span>
+        <div>
+          <strong>Care staff</strong>
+          <span>Notices concerns, logs observations, administers cognitive screeners.</span>
+        </div>
+      </div>
+      <div class="actor">
+        <span class="actor-dot supervisor" aria-hidden="true"></span>
+        <div>
+          <strong>Supervisor</strong>
+          <span>Reviews every observation, manages escalation, holds clinical oversight.</span>
+        </div>
+      </div>
+      <div class="actor">
+        <span class="actor-dot gp" aria-hidden="true"></span>
+        <div>
+          <strong>GP</strong>
+          <span>Confirms diagnosis and medication, flags safety issues, closes the loop.</span>
+        </div>
+      </div>
+      <div class="actor">
+        <span class="actor-dot system" aria-hidden="true"></span>
+        <div>
+          <strong>Amagi</strong>
+          <span>Interprets signals, applies the traffic-light system, sets timed reminders.</span>
+        </div>
+      </div>
+      <div class="actor">
+        <span class="actor-dot sp" aria-hidden="true"></span>
+        <div>
+          <strong>Social prescriber</strong>
+          <span>Provides community support after diagnosis — sees status, never clinical notes.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rag" aria-label="Traffic-light urgency system used throughout">
+      <span class="rag-item"><span class="rag-dot g" aria-hidden="true"></span> Green — routine (72&nbsp;hr)</span>
+      <span class="rag-item"><span class="rag-dot a" aria-hidden="true"></span> Amber — high priority (48&nbsp;hr)</span>
+      <span class="rag-item"><span class="rag-dot r" aria-hidden="true"></span> Red — urgent (4&nbsp;hr)</span>
+    </div>
+  </section>
+
+  <!-- Journey -->
+  <section class="journey" aria-label="Client journey stages">
+
+    <!-- 1 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">01</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Registration</h2>
+          <span class="status-chip">pre-screen</span>
+        </div>
+        <p class="stage-sub">A member of care staff spots something — memory slips, unusual behaviour, family worry — and opens a new client record.</p>
+        <ul class="stage-list">
+          <li>Client is registered under a pseudonym; personal details are stored separately for privacy.</li>
+          <li>Staff can suggest a likely diagnosis and current medications for the GP to confirm later.</li>
+          <li>Early observations are logged; Amagi assigns a traffic-light urgency, and a supervisor reviews.</li>
+        </ul>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 2 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">02</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Cognitive Screening</h2>
+          <span class="status-chip">screening</span>
+        </div>
+        <p class="stage-sub">When observations turn red — or a concerning pattern emerges — the client moves into structured screening.</p>
+        <ul class="stage-list">
+          <li>A trained staff member administers a validated cognitive screener with the client.</li>
+          <li>Amagi interprets the score instantly and flags borderline results for extra care.</li>
+          <li>Supervisor reviews the outcome and, if warranted, drafts a GP Referral Summary.</li>
+        </ul>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 3 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">03</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Memory Clinic Referral</h2>
+          <span class="status-chip">referred</span>
+        </div>
+        <p class="stage-sub">The supervisor formalises the referral. Amagi starts the clock so nothing quietly slips.</p>
+        <ul class="stage-list">
+          <li>Referral destination and date are logged against the client's timeline.</li>
+          <li>A waiting-period alert is armed, so the case can't be forgotten during hand-offs.</li>
+          <li>Staff keep logging observations — the picture continues to build.</li>
+        </ul>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+          <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 4 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">04</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Awaiting Appointment</h2>
+          <span class="status-chip">waiting</span>
+        </div>
+        <p class="stage-sub">Memory-clinic queues are long. Amagi keeps the client visible through the wait.</p>
+        <ul class="stage-list">
+          <li>Automatic check-in prompts at 1 month and 3 months after referral.</li>
+          <li>If no appointment date has landed after 8 weeks, Amagi raises a chase-up alert.</li>
+          <li>Carer strain is tracked separately — because carers need support too.</li>
+        </ul>
+        <div class="highlight">
+          <strong>Why this matters —</strong> the waiting period is where families feel most abandoned. Amagi ensures the case is actively held, not passively parked.
+        </div>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+          <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 5 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">05</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Diagnosis Confirmed</h2>
+          <span class="status-chip">diagnosed</span>
+        </div>
+        <p class="stage-sub">The GP reviews the picture staff have built, confirms the diagnosis, and sets the plan in motion.</p>
+        <ul class="stage-list">
+          <li>GP confirms or rejects each suggested diagnosis, using standard clinical codes.</li>
+          <li>Medications are confirmed the same way — matched to the NHS dictionary.</li>
+          <li>If a Lewy body diagnosis meets certain antipsychotic drugs, an urgent safety alert fires.</li>
+          <li>An annual review reminder is armed; the observation form quietly switches to its post-diagnosis version.</li>
+        </ul>
+        <div class="highlight">
+          <strong>Built-in safety check —</strong> the Lewy body / antipsychotic combination can be life-threatening. Amagi surfaces it the moment it appears.
+        </div>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot gp" aria-hidden="true"></span> GP</span>
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 6 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">06</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Post-Diagnosis Care</h2>
+          <span class="status-chip">post-diagnosis</span>
+        </div>
+        <p class="stage-sub">Diagnosis isn't the finish line. Amagi structures the long tail of support that follows.</p>
+        <ul class="stage-list">
+          <li>Staff continue logging observations — the questions now focus on living well with a diagnosis.</li>
+          <li>A support checklist covers the essentials: Lasting Power of Attorney, DVLA notification, home safety, advance care planning.</li>
+          <li>Carer needs are formally assessed.</li>
+          <li>Supervisors can generate an MDT summary and refer to a social prescriber when community support would help.</li>
+        </ul>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+          <span class="role-chip"><span class="actor-dot sp" aria-hidden="true"></span> Social prescriber</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- 7 -->
+    <article class="stage">
+      <div class="stage-num" aria-hidden="true">07</div>
+      <div class="stage-card">
+        <div class="stage-header">
+          <h2 class="stage-title">Discharge</h2>
+          <span class="status-chip">discharged</span>
+        </div>
+        <p class="stage-sub">When the client's Amagi journey formally ends, it ends cleanly and compliantly.</p>
+        <ul class="stage-list">
+          <li>The supervisor records a formal discharge with the date and reason.</li>
+          <li>Observations are archived; the full audit trail is preserved for accountability.</li>
+          <li>Retention rules are applied automatically, with a scheduled deletion date under GDPR.</li>
+        </ul>
+        <div class="stage-footer">
+          <span class="role-chip"><span class="actor-dot supervisor" aria-hidden="true"></span> Supervisor</span>
+          <span class="role-chip"><span class="actor-dot system" aria-hidden="true"></span> Amagi</span>
+        </div>
+      </div>
+    </article>
+
+  </section>
+
+  <!-- Early-discharge branch -->
+  <aside class="branch" aria-labelledby="branch-heading">
+    <div class="branch-label">Off-ramp</div>
+    <h3 id="branch-heading">The early-discharge branch</h3>
+    <p>
+      At any stage before formal discharge, a client's situation can change — they move out of area, they decline
+      further contact, or the concern resolves. A supervisor can record an <strong>early discharge</strong> from any
+      point in the journey. The audit trail and retention rules apply exactly as they would at the normal end point.
+    </p>
+  </aside>
+
+  <!-- Close -->
+  <footer class="close">
+    <span class="mark" aria-hidden="true"></span>
+    <h3>Seven stages. One continuous thread of care.</h3>
+    <p>
+      Amagi holds the client's story — from the first quiet worry to the last handover — so no signal is lost,
+      no family is left waiting in silence, and no clinician has to rebuild the picture from scratch.
+    </p>
+  </footer>
+
+</div>
+
+</Layout>
+
+<style is:global>
+  .wrap { max-width: 920px; margin: 0 auto; padding: 72px 32px 96px; }
+
+  /* Hero */
+  .hero { margin-bottom: 64px; }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 22px 0 18px;
+    font-weight: 700;
+  }
+  .hero p.lede {
+    font-size: 19px; color: var(--ink-soft); max-width: 640px; margin: 0;
+  }
+
+  /* Cast */
+  .cast {
+    margin: 40px 0 56px;
+    padding: 24px 26px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .cast h2 {
+    font-size: 12px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); margin: 0 0 16px; font-weight: 600;
+  }
+  .cast-grid {
+    display: grid; gap: 14px 24px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+  .actor { display: flex; gap: 12px; align-items: flex-start; }
+  .actor-dot {
+    width: 12px; height: 12px; border-radius: 50%; margin-top: 6px; flex: none;
+  }
+  .actor-dot.staff { background: #4B7BB0; }
+  .actor-dot.supervisor { background: var(--amber); }
+  .actor-dot.gp { background: var(--green); }
+  .actor-dot.system { background: #8E7AA8; }
+  .actor-dot.sp { background: #C56B8B; }
+  .actor strong { display: block; font-size: 14px; }
+  .actor span { font-size: 13px; color: var(--ink-muted); }
+
+  /* Journey */
+  .journey { position: relative; }
+  .journey::before {
+    content: ""; position: absolute; top: 32px; bottom: 32px;
+    left: 27px; width: 2px;
+    background: linear-gradient(to bottom, var(--amber-soft), var(--line-strong), var(--amber-soft));
+    border-radius: 2px;
+  }
+  .stage {
+    position: relative; padding-left: 78px; margin-bottom: 36px;
+  }
+  .stage:last-child { margin-bottom: 0; }
+  .stage-num {
+    position: absolute; left: 0; top: 0;
+    width: 56px; height: 56px; border-radius: 50%;
+    background: var(--card);
+    border: 2px solid var(--amber);
+    color: var(--amber-ink);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 18px; letter-spacing: -0.01em;
+    box-shadow: var(--shadow); z-index: 1;
+  }
+  .stage-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+  }
+  .stage-header {
+    display: flex; align-items: baseline; justify-content: space-between;
+    gap: 16px; flex-wrap: wrap; margin-bottom: 6px;
+  }
+  .stage-title { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; margin: 0; }
+  .status-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--amber-soft); color: var(--amber-ink);
+    letter-spacing: 0.06em; text-transform: uppercase;
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  .stage-sub { color: var(--ink-soft); margin: 0 0 18px; font-size: 15px; }
+  .stage-list { list-style: none; padding: 0; margin: 0 0 18px; }
+  .stage-list li {
+    position: relative; padding-left: 22px; margin-bottom: 8px;
+    color: var(--ink); font-size: 15px;
+  }
+  .stage-list li::before {
+    content: ""; position: absolute; left: 0; top: 9px;
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--amber); opacity: 0.7;
+  }
+  .stage-footer {
+    display: flex; gap: 8px; flex-wrap: wrap;
+    padding-top: 16px; border-top: 1px dashed var(--line);
+  }
+  .role-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 500;
+    padding: 4px 12px 4px 8px; border-radius: 999px;
+    background: var(--paper); color: var(--ink);
+    border: 1px solid var(--line);
+  }
+  .role-chip .actor-dot { margin: 0; width: 8px; height: 8px; }
+
+  .highlight {
+    margin: 14px 0 18px; padding: 14px 18px;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: 4px 10px 10px 4px;
+    font-size: 14px; color: var(--ink-soft); line-height: 1.6;
+  }
+  .highlight strong {
+    color: var(--amber-ink);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+
+  /* Branch callout */
+  .branch {
+    margin: 44px 0; padding: 26px 30px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--line-strong);
+    border-radius: 4px 16px 16px 4px;
+    box-shadow: var(--shadow);
+  }
+  .branch-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 6px; display: flex; align-items: center; gap: 8px;
+  }
+  .branch-label::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--ink-muted);
+  }
+  .branch h3 {
+    margin: 0 0 10px; font-size: 20px; letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .branch p { margin: 0; color: var(--ink-soft); font-size: 15px; line-height: 1.65; }
+  .branch p strong { color: var(--ink); font-weight: 600; }
+
+  /* Rag Legend */
+  .rag {
+    display: flex; gap: 20px; align-items: center; margin-top: 14px;
+    padding-top: 14px; border-top: 1px dashed var(--line);
+    font-size: 13px; flex-wrap: wrap;
+  }
+  .rag-item { display: inline-flex; align-items: center; gap: 8px; }
+  .rag-dot { width: 12px; height: 12px; border-radius: 50%; }
+  .rag-dot.g { background: var(--green); }
+  .rag-dot.a { background: var(--amber); }
+  .rag-dot.r { background: var(--red); }
+
+  /* Close */
+  .close {
+    margin-top: 64px; padding: 40px 32px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .close h3 {
+    margin: 0 0 10px; font-size: 24px; letter-spacing: -0.015em;
+    color: var(--ink); font-weight: 700;
+  }
+  .close p {
+    margin: 0 auto; color: var(--ink-soft); font-size: 15px;
+    max-width: 540px; line-height: 1.65;
+  }
+  .close .mark {
+    display: inline-block; margin-bottom: 16px;
+    width: 22px; height: 22px; border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #F4C48A 0%, var(--amber) 70%);
+    box-shadow: 0 0 0 4px var(--amber-soft);
+  }
+
+  @media (max-width: 640px) {
+    .wrap { padding: 48px 20px 64px; }
+    .stage { padding-left: 62px; }
+    .stage-num { width: 44px; height: 44px; font-size: 15px; }
+    .journey::before { left: 21px; }
+    .stage-card { padding: 20px 22px; }
+    .cast { padding: 20px; }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F4ECD9;
+      --ink-soft: #C6BEAB;
+      --ink-muted: #8F8874;
+      --paper: #14181F;
+      --paper-warm: #1D2028;
+      --card: #1B1F27;
+      --line: #2C3038;
+      --line-strong: #3E4450;
+      --amber: #E0A458;
+      --amber-soft: #3A2C1A;
+      --amber-ink: #F4C48A;
+      --green: #6CB088;
+      --green-soft: #1F3327;
+      --red: #D97169;
+      --red-soft: #3A1E1C;
+      --neutral-soft: #2A2F38;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F4ECD9;
+    --ink-soft: #C6BEAB;
+    --ink-muted: #8F8874;
+    --paper: #14181F;
+    --paper-warm: #1D2028;
+    --card: #1B1F27;
+    --line: #2C3038;
+    --line-strong: #3E4450;
+    --amber: #E0A458;
+    --amber-soft: #3A2C1A;
+    --amber-ink: #F4C48A;
+    --green: #6CB088;
+    --green-soft: #1F3327;
+    --red: #D97169;
+    --red-soft: #3A1E1C;
+    --neutral-soft: #2A2F38;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  }
+</style>

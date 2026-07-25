@@ -1,17 +1,135 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
+const base = import.meta.env.BASE_URL;
 ---
+<Layout title="Amagi — Documentation">
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Amagi&nbsp;·&nbsp;Documentation</span>
+    </div>
+    <h1>The <em>Amagi</em> handbook.</h1>
+    <p class="lede">
+      A small set of illustrated notes on how Amagi is organised, how care flows through it,
+      and where each stage of the client journey lives in the app.
+    </p>
+  </header>
+
+  <nav class="doc-list" aria-label="Documents">
+
+    <a class="doc-card wide" href={`${base}client-journey`}>
+      <p class="doc-eyebrow">Narrative</p>
+      <h2 class="doc-title">The Client Journey</h2>
+      <p class="doc-desc">
+        The seven-stage story of how care flows through Amagi — from first concern to lasting support —
+        and the people who walk it with the client.
+      </p>
+      <span class="doc-cta">Read the journey</span>
+    </a>
+
+    <a class="doc-card" href={`${base}client-journey-flow`}>
+      <p class="doc-eyebrow">Diagram</p>
+      <h2 class="doc-title">Client Journey — Flow</h2>
+      <p class="doc-desc">
+        The same journey as an operational flow: which screens, which actors, and where each step lives in the app.
+      </p>
+      <span class="doc-cta">Open the flow</span>
+    </a>
+
+    <a class="doc-card" href={`${base}org-hierarchy`}>
+      <p class="doc-eyebrow">Structure</p>
+      <h2 class="doc-title">Tenant Hierarchy</h2>
+      <p class="doc-desc">
+        Who creates whom, from the top down — the shape of tenants, roles, and permissions inside Amagi.
+      </p>
+      <span class="doc-cta">See the hierarchy</span>
+    </a>
+
+  </nav>
+
+  <footer class="foot">
+    Amagi internal documentation.
+  </footer>
+
+</div>
+
+</Layout>
+
+<style is:global>
+  .wrap { max-width: 920px; margin: 0 auto; padding: 72px 32px 96px; }
+
+  .hero { margin-bottom: 56px; }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 54px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 22px 0 18px;
+    font-weight: 700;
+  }
+  .hero p.lede { font-size: 19px; color: var(--ink-soft); max-width: 640px; margin: 0; }
+
+  .doc-list {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: 1fr;
+  }
+  @media (min-width: 720px) {
+    .doc-list { grid-template-columns: repeat(2, 1fr); }
+    .doc-card.wide { grid-column: 1 / -1; }
+  }
+
+  .doc-card {
+    display: block;
+    padding: 26px 28px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    text-decoration: none;
+    color: inherit;
+    transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+  }
+  .doc-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--line-strong);
+    box-shadow: 0 2px 4px rgba(11, 31, 59, 0.06), 0 16px 40px rgba(11, 31, 59, 0.08);
+  }
+  .doc-card:focus-visible {
+    outline: 2px solid var(--amber);
+    outline-offset: 3px;
+  }
+
+  .doc-eyebrow {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.16em;
+    color: var(--amber-ink); font-weight: 600;
+    margin: 0 0 10px;
+  }
+  .doc-title {
+    font-size: 22px; letter-spacing: -0.01em; font-weight: 700;
+    margin: 0 0 8px; color: var(--ink);
+  }
+  .doc-desc {
+    font-size: 15px; color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  .doc-cta {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 13px; font-weight: 600;
+    color: var(--amber-ink);
+  }
+  .doc-cta::after {
+    content: "→";
+    transition: transform 120ms ease;
+  }
+  .doc-card:hover .doc-cta::after { transform: translateX(3px); }
+
+  footer.foot {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--ink-muted);
+  }
+</style>

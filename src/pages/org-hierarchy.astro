@@ -1,0 +1,393 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="The Amagi Tenant Hierarchy">
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Amagi&nbsp;·&nbsp;Tenant Hierarchy</span>
+    </div>
+    <h1>Who creates whom, <em>from the top down</em>.</h1>
+    <p class="lede">
+      One System Admin sits at the root and creates tenants. Each tenant runs itself — inviting
+      its own people, and through them, tracking its own clients. Every branch is kept separate.
+    </p>
+  </header>
+
+  <div class="tree-container" role="img" aria-label="Organisation hierarchy tree">
+    <svg viewBox="0 0 1200 640" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--flow-line)"/>
+        </marker>
+      </defs>
+
+      <!-- ==================== ROOT: SYSTEM ADMIN ==================== -->
+      <g>
+        <rect x="450" y="26" width="300" height="86" rx="14"
+              fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>
+        <rect x="450" y="26" width="300" height="14" rx="14" fill="var(--amber-soft)"/>
+        <rect x="450" y="33" width="300" height="7" fill="var(--amber-soft)"/>
+        <circle cx="486" cy="74" r="20"
+                fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="486" y="80" text-anchor="middle" font-size="12" font-weight="700" fill="var(--amber-ink)">SA</text>
+        <text x="518" y="70" font-size="17" font-weight="700" fill="var(--ink)">System Admin</text>
+        <text x="518" y="90" font-size="12" fill="var(--ink-soft)">The root user · 1 total</text>
+        <text x="742" y="104" text-anchor="end" font-size="10" letter-spacing="0.14em" font-weight="700" fill="var(--amber-ink)">ROOT</text>
+      </g>
+
+      <!-- Lines: sysadmin → tenants (trunk + manifold + branches) -->
+      <path d="M 600 106 V 155" fill="none" stroke="var(--flow-line)" stroke-width="2"/>
+      <text x="608" y="128" font-size="12" font-style="italic" fill="var(--ink-muted)">creates &amp; provisions organisations</text>
+      <path d="M 280 155 H 920" fill="none" stroke="var(--flow-line)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 280 155 V 194" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 920 155 V 194" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+
+      <!-- ==================== PRIMARY CARE TENANT ==================== -->
+      <g>
+        <!-- stack -->
+        <rect x="138" y="210" width="284" height="86" rx="12" fill="var(--gp-soft)" opacity="0.4"/>
+        <rect x="134" y="206" width="284" height="86" rx="12" fill="var(--gp-soft)" opacity="0.65"/>
+        <!-- front -->
+        <rect x="130" y="200" width="284" height="86" rx="12" fill="var(--card)" stroke="var(--gp)" stroke-width="1.5"/>
+        <path d="M 130 208 v -8 a 12 12 0 0 1 12 -12 h 260 a 12 12 0 0 1 12 12 v 8 z"
+              fill="var(--gp-soft)"/>
+        <!-- Actually simpler: solid top band -->
+        <rect x="130" y="200" width="284" height="12" rx="12" fill="var(--gp-soft)"/>
+        <rect x="130" y="205" width="284" height="7" fill="var(--gp-soft)"/>
+
+        <text x="148" y="238" font-size="10" letter-spacing="0.14em" font-weight="700" fill="var(--gp)">TENANT · PRIMARY CARE</text>
+        <text x="148" y="260" font-size="17" font-weight="700" fill="var(--ink)">A GP practice</text>
+        <text x="148" y="280" font-size="12" fill="var(--ink-soft)">Runs the pre-diagnosis pathway</text>
+        <text x="406" y="280" text-anchor="end" font-size="11" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- ==================== SOCIAL PRESCRIBER TENANT ==================== -->
+      <g>
+        <rect x="778" y="210" width="284" height="86" rx="12" fill="var(--sp-soft)" opacity="0.4"/>
+        <rect x="774" y="206" width="284" height="86" rx="12" fill="var(--sp-soft)" opacity="0.65"/>
+        <rect x="770" y="200" width="284" height="86" rx="12" fill="var(--card)" stroke="var(--sp)" stroke-width="1.5"/>
+        <rect x="770" y="200" width="284" height="12" rx="12" fill="var(--sp-soft)"/>
+        <rect x="770" y="205" width="284" height="7" fill="var(--sp-soft)"/>
+
+        <text x="788" y="238" font-size="10" letter-spacing="0.14em" font-weight="700" fill="var(--sp)">TENANT · SOCIAL PRESCRIBER</text>
+        <text x="788" y="260" font-size="17" font-weight="700" fill="var(--ink)">A community team</text>
+        <text x="788" y="280" font-size="12" fill="var(--ink-soft)">Post-diagnosis &amp; community support</text>
+        <text x="1046" y="280" text-anchor="end" font-size="11" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- Lines: tenant → users (PC) -->
+      <path d="M 280 286 V 322" fill="none" stroke="var(--flow-line)" stroke-width="2"/>
+      <text x="290" y="315" font-size="12" font-style="italic" fill="var(--ink-muted)">invites users</text>
+      <path d="M 145 322 H 415" fill="none" stroke="var(--flow-line)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 145 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 280 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 415 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+
+      <!-- Lines: tenant → users (SP) -->
+      <path d="M 920 286 V 322" fill="none" stroke="var(--flow-line)" stroke-width="2"/>
+      <text x="930" y="315" font-size="12" font-style="italic" fill="var(--ink-muted)">invites users</text>
+      <path d="M 785 322 H 1055" fill="none" stroke="var(--flow-line)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 785 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 920 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 1055 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+
+      <!-- ==================== USER NODES ==================== -->
+      <!-- PC Tenant Admin (cx=145) -->
+      <g>
+        <rect x="90" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="90" y="365" width="4" height="96" rx="2" fill="var(--admin)"/>
+        <circle cx="145" cy="392" r="16" fill="var(--admin-soft)" stroke="var(--admin)" stroke-width="1.5"/>
+        <text x="145" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--admin)">TA</text>
+        <text x="145" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Tenant Admin</text>
+        <text x="145" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">1 per tenant</text>
+      </g>
+
+      <!-- PC GP (cx=280) -->
+      <g>
+        <!-- stack effect -->
+        <rect x="230" y="371" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.35"/>
+        <rect x="228" y="369" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.55"/>
+        <rect x="225" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="225" y="365" width="4" height="96" rx="2" fill="var(--gp)"/>
+        <circle cx="280" cy="392" r="16" fill="var(--gp-soft)" stroke="var(--gp)" stroke-width="1.5"/>
+        <text x="280" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gp)">GP</text>
+        <text x="280" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">GP</text>
+        <text x="280" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- PC Staff (cx=415) -->
+      <g>
+        <rect x="365" y="371" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.35"/>
+        <rect x="363" y="369" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.55"/>
+        <rect x="360" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="360" y="365" width="4" height="96" rx="2" fill="var(--staff)"/>
+        <circle cx="415" cy="392" r="16" fill="var(--staff-soft)" stroke="var(--staff)" stroke-width="1.5"/>
+        <text x="415" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--staff)">ST</text>
+        <text x="415" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Care staff</text>
+        <text x="415" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- SP Tenant Admin (cx=785) -->
+      <g>
+        <rect x="730" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="730" y="365" width="4" height="96" rx="2" fill="var(--admin)"/>
+        <circle cx="785" cy="392" r="16" fill="var(--admin-soft)" stroke="var(--admin)" stroke-width="1.5"/>
+        <text x="785" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--admin)">TA</text>
+        <text x="785" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Tenant Admin</text>
+        <text x="785" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">1 per tenant</text>
+      </g>
+
+      <!-- SP Supervisor (cx=920) -->
+      <g>
+        <rect x="870" y="371" width="110" height="96" rx="10" fill="var(--supervisor-soft)" opacity="0.35"/>
+        <rect x="868" y="369" width="110" height="96" rx="10" fill="var(--supervisor-soft)" opacity="0.55"/>
+        <rect x="865" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="865" y="365" width="4" height="96" rx="2" fill="var(--supervisor)"/>
+        <circle cx="920" cy="392" r="16" fill="var(--supervisor-soft)" stroke="var(--supervisor)" stroke-width="1.5"/>
+        <text x="920" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-ink)">SU</text>
+        <text x="920" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Supervisor</text>
+        <text x="920" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- SP Staff (cx=1055) -->
+      <g>
+        <rect x="1005" y="371" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.35"/>
+        <rect x="1003" y="369" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.55"/>
+        <rect x="1000" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="1000" y="365" width="4" height="96" rx="2" fill="var(--staff)"/>
+        <circle cx="1055" cy="392" r="16" fill="var(--staff-soft)" stroke="var(--staff)" stroke-width="1.5"/>
+        <text x="1055" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--staff)">ST</text>
+        <text x="1055" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Care staff</text>
+        <text x="1055" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- Lines: staff → client (PC) -->
+      <path d="M 415 461 V 505" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <text x="425" y="490" font-size="12" font-style="italic" fill="var(--ink-muted)">registers</text>
+
+      <!-- Lines: staff → client (SP) -->
+      <path d="M 1055 461 V 505" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <text x="1065" y="490" font-size="12" font-style="italic" fill="var(--ink-muted)">registers</text>
+
+      <!-- ==================== CLIENT NODES ==================== -->
+      <g>
+        <rect x="332" y="513" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.4"/>
+        <rect x="330" y="511" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.65"/>
+        <rect x="328" y="509" width="166" height="52" rx="26" fill="var(--paper)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <text x="411" y="533" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">Client</text>
+        <text x="411" y="550" text-anchor="middle" font-size="10" fill="var(--ink-muted)">pseudonymised · × many</text>
+      </g>
+
+      <g>
+        <rect x="972" y="513" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.4"/>
+        <rect x="970" y="511" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.65"/>
+        <rect x="968" y="509" width="166" height="52" rx="26" fill="var(--paper)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <text x="1051" y="533" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">Client</text>
+        <text x="1051" y="550" text-anchor="middle" font-size="10" fill="var(--ink-muted)">pseudonymised · × many</text>
+      </g>
+
+      <!-- ==================== ISOLATION LINE ==================== -->
+      <line x1="600" y1="200" x2="600" y2="600" stroke="var(--line-strong)"
+            stroke-width="1" stroke-dasharray="2 6" opacity="0.5"/>
+      <text x="600" y="617" text-anchor="middle" font-size="10" fill="var(--ink-muted)" letter-spacing="0.14em">DATA ISOLATION</text>
+
+    </svg>
+  </div>
+
+  <p class="hint">Every organisation is walled off from every other by row-level security in the database.</p>
+
+  <!-- Explainer cards -->
+  <div class="explainer">
+    <div class="explain-card">
+      <div class="step">Step 1</div>
+      <h3>System Admin creates a tenant</h3>
+      <p>
+        The System Admin sets up a new tenant — a GP practice or a community team — and picks the
+        first Tenant Admin to hand the keys to.
+      </p>
+      <ul>
+        <li><span class="dot" style="background:var(--admin)"></span><span><strong>Creates:</strong> the tenant, plus its first Tenant Admin.</span></li>
+      </ul>
+    </div>
+
+    <div class="explain-card">
+      <div class="step">Step 2</div>
+      <h3>Tenant Admin invites the team</h3>
+      <p>
+        Each Tenant Admin runs their own tenant — bringing in the roles that make sense for that
+        tenant type. They send email invitations from inside Amagi.
+      </p>
+      <ul>
+        <li><span class="dot" style="background:var(--gp)"></span><span><strong>GP practice invites:</strong> GPs, Care staff.</span></li>
+        <li><span class="dot" style="background:var(--sp)"></span><span><strong>Community team invites:</strong> Supervisors, Care staff.</span></li>
+      </ul>
+    </div>
+
+    <div class="explain-card">
+      <div class="step">Step 3</div>
+      <h3>Care staff register clients</h3>
+      <p>
+        Every client belongs to exactly one tenant, and is created by a member of that tenant's
+        care staff. All identifying details are pseudonymised.
+      </p>
+      <ul>
+        <li><span class="dot" style="background:var(--staff)"></span><span><strong>Care staff creates:</strong> Client records, observations, screening entries.</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Rules -->
+  <div class="rules">
+    <h3>The ground rules</h3>
+    <ul>
+      <li><strong>Each tenant is walled off.</strong> One tenant can never see another tenant's clients, staff, observations, or alerts.</li>
+      <li><strong>Roles are tenant-specific.</strong> A GP only exists inside a GP practice. A Supervisor only exists inside a community team.</li>
+      <li><strong>Care staff exists in both.</strong> The role is the same, but the observation forms and workflows adapt to the tenant type.</li>
+      <li><strong>Clients follow their tenant.</strong> A client registered by a GP practice stays with that practice — but can be referred to a community team for post-diagnosis support without leaking clinical notes.</li>
+      <li><strong>The System Admin is the only shared human.</strong> Everything below them is scoped strictly to a single tenant.</li>
+    </ul>
+  </div>
+
+</div>
+
+</Layout>
+
+<style is:global>
+  .wrap { max-width: 1160px; margin: 0 auto; padding: 64px 28px 88px; }
+
+  /* Hero */
+  .hero { margin-bottom: 40px; }
+  .hero h1 {
+    font-size: clamp(32px, 4.5vw, 46px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 22px 0 14px;
+    font-weight: 700;
+  }
+  .hero p.lede { font-size: 17px; color: var(--ink-soft); max-width: 660px; margin: 0; }
+
+  /* Tree container */
+  .tree-container {
+    overflow-x: auto;
+    padding: 24px 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tree-container svg {
+    display: block; margin: 0 auto;
+    min-width: 1000px;
+    width: 100%;
+    max-width: 1160px;
+    height: auto;
+  }
+  .hint {
+    font-size: 12px; color: var(--ink-muted);
+    text-align: center; margin-top: 4px;
+  }
+
+  /* Explainer cards */
+  .explainer {
+    margin-top: 56px;
+    display: grid; gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+  .explain-card {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 26px;
+    box-shadow: var(--shadow);
+  }
+  .explain-card .step {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); font-weight: 600;
+    margin-bottom: 10px;
+  }
+  .explain-card .step::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%;
+    background: var(--amber);
+  }
+  .explain-card h3 {
+    margin: 0 0 10px; font-size: 18px; letter-spacing: -0.01em;
+  }
+  .explain-card p { margin: 0 0 12px; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+  .explain-card p:last-child { margin-bottom: 0; }
+  .explain-card ul {
+    margin: 0; padding: 0; list-style: none;
+    font-size: 14px; color: var(--ink);
+  }
+  .explain-card li {
+    display: flex; align-items: baseline; gap: 8px;
+    padding: 4px 0;
+  }
+  .explain-card li .dot {
+    width: 8px; height: 8px; border-radius: 50%; flex: none;
+    align-self: center;
+  }
+  .explain-card li strong { font-weight: 600; }
+  .explain-card li span.hint-text { color: var(--ink-muted); font-size: 13px; }
+
+  /* Rules row */
+  .rules {
+    margin-top: 40px;
+    padding: 24px 26px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--amber);
+    border-radius: 4px 12px 12px 4px;
+    box-shadow: var(--shadow);
+  }
+  .rules h3 {
+    margin: 0 0 12px; font-size: 16px; color: var(--ink);
+  }
+  .rules ul {
+    margin: 0; padding: 0; list-style: none;
+    display: grid; gap: 8px;
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .rules li {
+    padding-left: 22px; position: relative; line-height: 1.55;
+  }
+  .rules li::before {
+    content: "";
+    position: absolute; left: 0; top: 8px;
+    width: 8px; height: 8px; border-radius: 2px;
+    background: var(--amber); opacity: 0.7;
+  }
+  .rules strong { color: var(--ink); font-weight: 600; }
+
+  /* Dark mode */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F4ECD9; --ink-soft: #C6BEAB; --ink-muted: #8F8874;
+      --paper: #14181F; --card: #1B1F27;
+      --line: #2C3038; --line-strong: #3E4450;
+      --amber: #E0A458; --amber-soft: #3A2C1A; --amber-ink: #F4C48A;
+      --green: #6CB088; --green-soft: #1F3327;
+      --flow-line: #4E5464;
+      --staff: #7AA3D0; --staff-soft: #1E2A3C;
+      --supervisor: #E0A458; --supervisor-soft: #3A2C1A;
+      --gp: #6CB088; --gp-soft: #1F3327;
+      --sp: #D68DAC; --sp-soft: #3A1F2A;
+      --admin: #8AA0C4; --admin-soft: #1F2532;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F4ECD9; --ink-soft: #C6BEAB; --ink-muted: #8F8874;
+    --paper: #14181F; --card: #1B1F27;
+    --line: #2C3038; --line-strong: #3E4450;
+    --amber: #E0A458; --amber-soft: #3A2C1A; --amber-ink: #F4C48A;
+    --green: #6CB088; --green-soft: #1F3327;
+    --flow-line: #4E5464;
+    --staff: #7AA3D0; --staff-soft: #1E2A3C;
+    --supervisor: #E0A458; --supervisor-soft: #3A2C1A;
+    --gp: #6CB088; --gp-soft: #1F3327;
+    --sp: #D68DAC; --sp-soft: #3A1F2A;
+    --admin: #8AA0C4; --admin-soft: #1F2532;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  }
+</style>

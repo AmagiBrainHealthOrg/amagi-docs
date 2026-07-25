@@ -1,0 +1,588 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title="The Amagi Client Journey — Flow">
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>Amagi&nbsp;·&nbsp;Client Journey&nbsp;·&nbsp;Flow</span>
+    </div>
+    <h1>The client journey, <em>and where it lives in the app</em>.</h1>
+    <p class="lede">
+      Seven stages, the specific people acting at each one, and the screens they use.
+      An off-ramp for early discharge is available at every pre-discharge stage.
+    </p>
+  </header>
+
+  <div class="legend" aria-label="Actor legend">
+    <span class="legend-label">Actors</span>
+    <span class="legend-item"><span class="legend-dot staff"></span>Care staff</span>
+    <span class="legend-item"><span class="legend-dot supervisor"></span>Supervisor</span>
+    <span class="legend-item"><span class="legend-dot gp"></span>GP</span>
+    <span class="legend-item"><span class="legend-dot system"></span>Amagi</span>
+    <span class="legend-item"><span class="legend-dot sp"></span>Social prescriber</span>
+  </div>
+
+  <div class="flow-container" role="img" aria-label="Amagi client journey flow chart">
+    <svg viewBox="0 0 900 1090" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <marker id="arrow-main" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--flow-line)"/>
+        </marker>
+        <marker id="arrow-off" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="var(--offramp-line)"/>
+        </marker>
+      </defs>
+
+      <!-- Off-ramp lane (dashed vertical) -->
+      <line x1="460" y1="148" x2="460" y2="798" stroke="var(--offramp-line)" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.55"/>
+
+      <!-- Off-ramp ticks from stages 01-06 -->
+      <line x1="420" y1="148" x2="460" y2="148" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+      <line x1="420" y1="278" x2="460" y2="278" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+      <line x1="420" y1="408" x2="460" y2="408" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+      <line x1="420" y1="538" x2="460" y2="538" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+      <line x1="420" y1="668" x2="460" y2="668" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+      <line x1="420" y1="798" x2="460" y2="798" stroke="var(--offramp-line)" stroke-width="1.5" opacity="0.75"/>
+
+      <!-- Merge arrow into off-ramp node -->
+      <line x1="460" y1="473" x2="518" y2="473" stroke="var(--offramp-line)" stroke-width="2" marker-end="url(#arrow-off)"/>
+      <text x="489" y="463" text-anchor="middle" font-size="11" font-style="italic" fill="var(--offramp-line)">from any stage</text>
+
+      <!-- Off-ramp node -->
+      <g>
+        <rect x="520" y="420" width="340" height="105" rx="14"
+              fill="var(--card)" stroke="var(--offramp-line)" stroke-width="1.5"/>
+        <circle cx="550" cy="450" r="18" fill="var(--red-soft)" stroke="var(--offramp-line)" stroke-width="1.5"/>
+        <text x="550" y="456" text-anchor="middle" font-size="11" font-weight="700" fill="var(--offramp-line)">OFF</text>
+        <text x="580" y="450" font-size="16" font-weight="700" fill="var(--ink)">Early Discharge</text>
+        <text x="846" y="450" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">EARLY_DISCHARGE</text>
+        <line x1="536" y1="470" x2="844" y2="470" stroke="var(--line)"/>
+        <circle cx="546" cy="486" r="3.5" fill="var(--supervisor)"/>
+        <text x="556" y="490" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> records reason &amp; date</text>
+        <text x="536" y="513" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screen —</tspan> Client Record</text>
+      </g>
+
+      <!-- Return path from off-ramp down to Journey ends -->
+      <path d="M 690 525 V 1015 H 424" fill="none" stroke="var(--offramp-line)" stroke-width="2" marker-end="url(#arrow-off)"/>
+
+      <!-- ============ Main spine ============ -->
+
+      <!-- Start pill -->
+      <g>
+        <rect x="60" y="32" width="360" height="40" rx="20"
+              fill="var(--green-soft)" stroke="var(--green)" stroke-width="1.5"/>
+        <text x="240" y="57" text-anchor="middle" font-size="14" font-weight="600" fill="var(--green)">Care staff notices concern</text>
+      </g>
+
+      <!-- start → 01 -->
+      <line x1="240" y1="72" x2="240" y2="93" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="86" font-size="11" font-style="italic" fill="var(--ink-muted)">new client added</text>
+
+      <!-- 01 Registration -->
+      <g>
+        <rect x="60" y="95" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="125" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="131" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">01</text>
+        <text x="120" y="125" font-size="16" font-weight="700" fill="var(--ink)">Registration</text>
+        <text x="406" y="125" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">PRE_SCREEN</text>
+        <line x1="76" y1="145" x2="404" y2="145" stroke="var(--line)"/>
+        <!-- Actors -->
+        <circle cx="86" cy="161" r="3.5" fill="var(--staff)"/>
+        <text x="94" y="165" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> registers client &amp; logs first observations</text>
+        <circle cx="86" cy="180" r="3.5" fill="var(--supervisor)"/>
+        <text x="94" y="184" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> reviews in the queue</text>
+        <!-- Screen -->
+        <text x="76" y="200" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Register a Client &nbsp;·&nbsp; Review Queue</text>
+      </g>
+
+      <!-- 01 → 02 -->
+      <line x1="240" y1="200" x2="240" y2="223" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="216" font-size="11" font-style="italic" fill="var(--ink-muted)">red RAG or pattern escalation</text>
+
+      <!-- 02 Cognitive Screening -->
+      <g>
+        <rect x="60" y="225" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="255" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="261" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">02</text>
+        <text x="120" y="255" font-size="16" font-weight="700" fill="var(--ink)">Cognitive Screening</text>
+        <text x="406" y="255" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">SCREENING</text>
+        <line x1="76" y1="275" x2="404" y2="275" stroke="var(--line)"/>
+        <circle cx="86" cy="291" r="3.5" fill="var(--staff)"/>
+        <text x="94" y="295" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> administers the screener</text>
+        <circle cx="86" cy="310" r="3.5" fill="var(--supervisor)"/>
+        <text x="94" y="314" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> interprets, drafts referral summary</text>
+        <text x="76" y="330" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Client Overview &nbsp;·&nbsp; Client Record</text>
+      </g>
+
+      <!-- 02 → 03 -->
+      <line x1="240" y1="330" x2="240" y2="353" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="346" font-size="11" font-style="italic" fill="var(--ink-muted)">referral generated</text>
+
+      <!-- 03 Memory Clinic Referral -->
+      <g>
+        <rect x="60" y="355" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="385" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="391" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">03</text>
+        <text x="120" y="385" font-size="16" font-weight="700" fill="var(--ink)">Memory Clinic Referral</text>
+        <text x="406" y="385" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">REFERRED</text>
+        <line x1="76" y1="405" x2="404" y2="405" stroke="var(--line)"/>
+        <circle cx="86" cy="421" r="3.5" fill="var(--supervisor)"/>
+        <text x="94" y="425" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> logs referral destination &amp; date</text>
+        <circle cx="86" cy="440" r="3.5" fill="var(--system)"/>
+        <text x="94" y="444" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> arms the waiting-period alert</text>
+        <text x="76" y="460" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screen —</tspan> Client Record</text>
+      </g>
+
+      <!-- 03 → 04 -->
+      <line x1="240" y1="460" x2="240" y2="483" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="476" font-size="11" font-style="italic" fill="var(--ink-muted)">referral submitted</text>
+
+      <!-- 04 Awaiting Appointment -->
+      <g>
+        <rect x="60" y="485" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="515" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="521" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">04</text>
+        <text x="120" y="515" font-size="16" font-weight="700" fill="var(--ink)">Awaiting Appointment</text>
+        <text x="406" y="515" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">WAITING</text>
+        <line x1="76" y1="535" x2="404" y2="535" stroke="var(--line)"/>
+        <circle cx="86" cy="551" r="3.5" fill="var(--system)"/>
+        <text x="94" y="555" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> raises check-in &amp; chase-up alerts</text>
+        <circle cx="86" cy="570" r="3.5" fill="var(--staff)"/>
+        <text x="94" y="574" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> keeps logging observations</text>
+        <text x="76" y="590" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Alerts Inbox &nbsp;·&nbsp; Log an Observation</text>
+      </g>
+
+      <!-- 04 → 05 -->
+      <line x1="240" y1="590" x2="240" y2="613" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="606" font-size="11" font-style="italic" fill="var(--ink-muted)">GP confirms diagnosis</text>
+
+      <!-- 05 Diagnosis Confirmed -->
+      <g>
+        <rect x="60" y="615" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="645" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="651" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">05</text>
+        <text x="120" y="645" font-size="16" font-weight="700" fill="var(--ink)">Diagnosis Confirmed</text>
+        <text x="406" y="645" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">DIAGNOSED</text>
+        <line x1="76" y1="665" x2="404" y2="665" stroke="var(--line)"/>
+        <circle cx="86" cy="681" r="3.5" fill="var(--gp)"/>
+        <text x="94" y="685" font-size="12" fill="var(--ink)"><tspan font-weight="600">GP</tspan> confirms diagnosis &amp; medications</text>
+        <circle cx="86" cy="700" r="3.5" fill="var(--system)"/>
+        <text x="94" y="704" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> fires the Lewy-body safety check</text>
+        <text x="76" y="720" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Record Diagnosis &nbsp;·&nbsp; GP Alerts</text>
+      </g>
+
+      <!-- 05 → 06 -->
+      <line x1="240" y1="720" x2="240" y2="743" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="736" font-size="11" font-style="italic" fill="var(--ink-muted)">post-diagnosis care begins</text>
+
+      <!-- 06 Post-Diagnosis Care -->
+      <g>
+        <rect x="60" y="745" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="775" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="781" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">06</text>
+        <text x="120" y="775" font-size="16" font-weight="700" fill="var(--ink)">Post-Diagnosis Care</text>
+        <text x="406" y="775" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">POST_DIAGNOSIS</text>
+        <line x1="76" y1="795" x2="404" y2="795" stroke="var(--line)"/>
+        <circle cx="86" cy="811" r="3.5" fill="var(--staff)"/>
+        <text x="94" y="815" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> logs post-diagnosis observations</text>
+        <circle cx="86" cy="830" r="3.5" fill="var(--supervisor)"/>
+        <text x="94" y="834" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> generates MDT summary, refers to SP</text>
+        <text x="76" y="850" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Log an Observation &nbsp;·&nbsp; Client Record</text>
+      </g>
+
+      <!-- 06 → 07 -->
+      <line x1="240" y1="850" x2="240" y2="873" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="866" font-size="11" font-style="italic" fill="var(--ink-muted)">supervisor records formal discharge</text>
+
+      <!-- 07 Discharge -->
+      <g>
+        <rect x="60" y="875" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <circle cx="90" cy="905" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
+        <text x="90" y="911" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">07</text>
+        <text x="120" y="905" font-size="16" font-weight="700" fill="var(--ink)">Discharge</text>
+        <text x="406" y="905" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">DISCHARGED</text>
+        <line x1="76" y1="925" x2="404" y2="925" stroke="var(--line)"/>
+        <circle cx="86" cy="941" r="3.5" fill="var(--supervisor)"/>
+        <text x="94" y="945" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> records discharge &amp; reason</text>
+        <circle cx="86" cy="960" r="3.5" fill="var(--system)"/>
+        <text x="94" y="964" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> archives records, applies retention</text>
+        <text x="76" y="980" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screen —</tspan> Client Record</text>
+      </g>
+
+      <!-- 07 → end -->
+      <line x1="240" y1="980" x2="240" y2="1003" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
+      <text x="250" y="996" font-size="11" font-style="italic" fill="var(--ink-muted)">retention rules applied</text>
+
+      <!-- End pill -->
+      <g>
+        <rect x="60" y="1005" width="360" height="40" rx="20"
+              fill="var(--paper)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <text x="240" y="1030" text-anchor="middle" font-size="14" font-weight="600" fill="var(--ink-soft)">Journey ends</text>
+      </g>
+
+    </svg>
+  </div>
+
+  <p class="hint">Each stage names the actors, what they do, and the primary screen route in the app. Dashed lane = early-discharge off-ramp.</p>
+
+  <!-- Detailed mapping table -->
+  <section class="mapping" aria-labelledby="map-heading">
+    <h2 id="map-heading">Stage &nbsp;·&nbsp; Who's involved &nbsp;·&nbsp; Where in the app</h2>
+    <p class="subhead">The people acting at each stage and the screens they open.</p>
+
+    <!-- 01 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">01</span>
+        <span class="status">Pre-screen</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Registration</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">registers the client under a pseudonym, logs the first observations, may suggest a diagnosis for the GP to confirm later.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">works through the review queue, overrides the urgency rating with a written reason if needed.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">assigns a traffic-light urgency to each observation and notifies the right supervisor.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Register a Client</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Add a new client with pseudonym, demographics, carer details.</span></div>
+        <div class="screen-row"><span class="screen-name">Log an Observation</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Fill out the pre-diagnosis observation form.</span></div>
+        <div class="screen-row"><span class="screen-name">Review Queue</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Every incoming observation, sorted by severity.</span></div>
+        <div class="screen-row"><span class="screen-name">Review an Observation</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Open one observation, override its rating with a reason.</span></div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">02</span>
+        <span class="status">Screening</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Cognitive Screening</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">administers a validated cognitive screener with the client.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">interprets the score, drafts the GP referral summary.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">interprets scores automatically and flags borderline results.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Client Overview</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Everything known about the client; start a screener from here.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Review the screening result, draft the referral summary.</span></div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">03</span>
+        <span class="status">Referred</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Memory Clinic Referral</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">logs the referral destination and date on the client record.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">arms the waiting-period alert so the case can't be forgotten during hand-offs.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">The single source of truth for a client — referral is recorded here.</span></div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">04</span>
+        <span class="status">Waiting</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Awaiting Appointment</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">sends check-ins at 1 and 3 months, raises an 8-week appointment-chase alert.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">keeps logging observations; carer strain is tracked as its own trajectory.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">actions incoming alerts, chases the memory clinic where needed.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Alerts Inbox</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Timed check-ins and chase-up alerts land here.</span></div>
+        <div class="screen-row"><span class="screen-name">Log an Observation</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Continued observation logging through the wait.</span></div>
+      </div>
+    </div>
+
+    <!-- 05 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">05</span>
+        <span class="status">Diagnosed</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Diagnosis Confirmed</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--gp)"></span><span><span class="role">GP</span> — <span class="verb">confirms or rejects each suggested diagnosis and medication using standard clinical codes.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">fires the Lewy-body / antipsychotic safety alert, arms the annual review reminder, and quietly switches the observation form to its post-diagnosis version.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Record Diagnosis</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Confirm the diagnosis and medications matched to NHS coding.</span></div>
+        <div class="screen-row"><span class="screen-name">GP Alerts</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Safety alerts, including the Lewy-body medication check.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Overview</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">The GP's summary view of the client.</span></div>
+      </div>
+    </div>
+
+    <!-- 06 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">06</span>
+        <span class="status">Post-diagnosis</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Post-Diagnosis Care</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">keeps logging observations — the form now focuses on living well with a diagnosis.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">walks through the post-diagnosis checklist (Lasting Power of Attorney, DVLA, home safety, advance care planning), assesses carer needs, drafts the MDT summary, refers to a social prescriber where community support helps.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--sp)"></span><span><span class="role">Social prescriber</span> — <span class="verb">coordinates community support and sees status only — never clinical notes.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Log an Observation</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Same screen — form auto-switches to the post-diagnosis variant.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">MDT summary, checklist, carer assessment, social-prescribing referral.</span></div>
+      </div>
+    </div>
+
+    <!-- 07 -->
+    <div class="stage-row">
+      <div class="stage-num">
+        <span class="badge">07</span>
+        <span class="status">Discharged</span>
+      </div>
+      <div>
+        <h3 class="stage-title">Discharge</h3>
+        <div class="stage-actors">
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">records the formal discharge with the date and reason.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">archives observations, preserves the audit trail, applies GDPR retention with a scheduled deletion date.</span></span></div>
+        </div>
+      </div>
+      <div class="stage-screens">
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Formal discharge is recorded on the client record.</span></div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Off-ramp detail -->
+  <aside class="offramp-block">
+    <div class="tag">Off-ramp</div>
+    <h3>Early Discharge — available from stages 01 – 06</h3>
+    <p>
+      A supervisor can end a client's journey at any point before formal discharge — because the client moves
+      out of area, declines further contact, or the concern resolves. The audit trail and GDPR retention rules
+      apply exactly as at the normal end point.
+    </p>
+    <div class="stage-actors" style="margin-bottom: 12px;">
+      <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">records reason &amp; date of early discharge.</span></span></div>
+    </div>
+    <div class="screen-row" style="border-left-color: var(--offramp-line);">
+      <span class="screen-name">Client Record</span>
+      <span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span>
+      <span class="screen-desc">The same client-record screen — early discharge is one of the actions available there.</span>
+    </div>
+  </aside>
+
+</div>
+
+</Layout>
+
+<style is:global>
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 64px 28px 88px; }
+
+  /* Hero */
+  .hero { margin-bottom: 40px; }
+  .hero h1 {
+    font-size: clamp(32px, 4.5vw, 46px);
+    line-height: 1.05; letter-spacing: -0.02em;
+    margin: 22px 0 14px;
+    font-weight: 700;
+  }
+  .hero p.lede { font-size: 17px; color: var(--ink-soft); max-width: 660px; margin: 0; }
+
+  /* Legend */
+  .legend {
+    margin: 28px 0 12px;
+    display: flex; flex-wrap: wrap; gap: 8px 20px;
+    padding: 16px 20px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    font-size: 13px;
+    align-items: center;
+  }
+  .legend-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); font-weight: 600; margin-right: 4px;
+  }
+  .legend-item { display: inline-flex; align-items: center; gap: 6px; color: var(--ink); }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; flex: none; }
+  .legend .staff { background: var(--staff); }
+  .legend .supervisor { background: var(--supervisor); }
+  .legend .gp { background: var(--gp); }
+  .legend .system { background: var(--system); }
+  .legend .sp { background: var(--sp); }
+
+  /* Flow container */
+  .flow-container {
+    overflow-x: auto;
+    padding: 12px 0 20px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .flow-container svg {
+    display: block; margin: 0 auto;
+    min-width: 880px;
+    width: 100%;
+    max-width: 1060px;
+    height: auto;
+  }
+  .hint {
+    font-size: 12px; color: var(--ink-muted);
+    text-align: center; margin-top: 4px;
+  }
+
+  /* Mapping table */
+  .mapping {
+    margin-top: 56px;
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+  }
+  .mapping h2 {
+    font-size: 13px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); font-weight: 600;
+    margin: 0; padding: 20px 26px 6px;
+  }
+  .mapping .subhead {
+    font-size: 14px; color: var(--ink-soft);
+    padding: 0 26px 18px; margin: 0;
+  }
+  .stage-row {
+    display: grid;
+    grid-template-columns: 92px 1fr 1.4fr;
+    gap: 24px;
+    padding: 22px 26px;
+    border-top: 1px solid var(--line);
+    align-items: start;
+  }
+  .stage-row:nth-child(2) { border-top: 1px solid var(--line); }
+  .stage-num {
+    display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  }
+  .stage-num .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--amber-soft); color: var(--amber-ink);
+    border: 1.5px solid var(--amber);
+    font-weight: 800; font-size: 15px;
+  }
+  .stage-num .status {
+    font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 10px; letter-spacing: 0.08em;
+    color: var(--ink-muted);
+  }
+  .stage-title {
+    font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
+    margin: 0 0 8px;
+  }
+  .stage-actors {
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 14px; color: var(--ink);
+  }
+  .stage-actor { display: flex; align-items: baseline; gap: 8px; }
+  .stage-actor .dot {
+    width: 8px; height: 8px; border-radius: 50%; flex: none;
+    align-self: center;
+  }
+  .stage-actor .role { font-weight: 600; color: var(--ink); }
+  .stage-actor .verb { color: var(--ink-soft); }
+  .stage-screens {
+    display: flex; flex-direction: column; gap: 6px;
+    font-size: 13px;
+  }
+  .screen-row {
+    display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap;
+    padding: 10px 14px;
+    background: var(--paper);
+    border-radius: 8px;
+    border-left: 2px solid var(--amber);
+  }
+  .screen-name {
+    font-size: 14px; font-weight: 600; color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .screen-role {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-size: 11px; font-weight: 500;
+    padding: 2px 8px; border-radius: 999px;
+    background: var(--card); border: 1px solid var(--line);
+    color: var(--ink-soft);
+  }
+  .screen-role .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .screen-desc { color: var(--ink-muted); font-size: 13px; flex: 1 1 100%; margin-top: 2px; }
+
+  /* Off-ramp block */
+  .offramp-block {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--offramp-line);
+    border-radius: 4px 16px 16px 4px;
+    padding: 22px 26px;
+    margin-top: 32px;
+    box-shadow: var(--shadow);
+  }
+  .offramp-block .tag {
+    font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em;
+    color: var(--ink-muted); font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    margin-bottom: 8px;
+  }
+  .offramp-block .tag::before {
+    content: ""; width: 6px; height: 6px; border-radius: 50%;
+    background: var(--offramp-line);
+  }
+  .offramp-block h3 { margin: 0 0 8px; font-size: 18px; color: var(--ink); }
+  .offramp-block p { margin: 0 0 12px; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
+  .offramp-block .screen-row { margin: 0; }
+
+  @media (max-width: 720px) {
+    .stage-row { grid-template-columns: 1fr; gap: 12px; }
+  }
+
+  /* Dark */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #F4ECD9; --ink-soft: #C6BEAB; --ink-muted: #8F8874;
+      --paper: #14181F; --card: #1B1F27;
+      --line: #2C3038; --line-strong: #3E4450;
+      --amber: #E0A458; --amber-soft: #3A2C1A; --amber-ink: #F4C48A;
+      --green: #6CB088; --green-soft: #1F3327;
+      --red: #D97169; --red-soft: #3A1E1C;
+      --flow-line: #4E5464; --offramp-line: #7A4E4A;
+      --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --ink: #F4ECD9; --ink-soft: #C6BEAB; --ink-muted: #8F8874;
+    --paper: #14181F; --card: #1B1F27;
+    --line: #2C3038; --line-strong: #3E4450;
+    --amber: #E0A458; --amber-soft: #3A2C1A; --amber-ink: #F4C48A;
+    --green: #6CB088; --green-soft: #1F3327;
+    --red: #D97169; --red-soft: #3A1E1C;
+    --flow-line: #4E5464; --offramp-line: #7A4E4A;
+    --shadow: 0 1px 2px rgba(0,0,0,0.3), 0 8px 32px rgba(0,0,0,0.4);
+  }
+</style>
