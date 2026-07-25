@@ -3,7 +3,7 @@ interface Props {
   title: string;
 }
 const { title } = Astro.props;
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <!doctype html>
 <html lang="en">
@@ -11,9 +11,9 @@ const base = import.meta.env.BASE_URL;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>{title}</title>
-<script src={`${base}auth.js`}></script>
-<link rel="stylesheet" href={`${base}styles.css`} />
-<link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
+<script is:inline src={`${base}/auth.js`}></script>
+<link rel="stylesheet" href={`${base}/styles.css`} />
+<link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
 </head>
 <body>
 <slot />

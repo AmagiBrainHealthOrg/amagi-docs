@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 ---
 <Layout title="Amagi — Documentation">
 
@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL;
 
   <nav class="doc-list" aria-label="Documents">
 
-    <a class="doc-card wide" href={`${base}client-journey`}>
+    <a class="doc-card wide" href={`${base}/client-journey`}>
       <p class="doc-eyebrow">Narrative</p>
       <h2 class="doc-title">The Client Journey</h2>
       <p class="doc-desc">
@@ -30,7 +30,7 @@ const base = import.meta.env.BASE_URL;
       <span class="doc-cta">Read the journey</span>
     </a>
 
-    <a class="doc-card" href={`${base}client-journey-flow`}>
+    <a class="doc-card" href={`${base}/client-journey-flow`}>
       <p class="doc-eyebrow">Diagram</p>
       <h2 class="doc-title">Client Journey — Flow</h2>
       <p class="doc-desc">
@@ -39,7 +39,7 @@ const base = import.meta.env.BASE_URL;
       <span class="doc-cta">Open the flow</span>
     </a>
 
-    <a class="doc-card" href={`${base}org-hierarchy`}>
+    <a class="doc-card" href={`${base}/org-hierarchy`}>
       <p class="doc-eyebrow">Structure</p>
       <h2 class="doc-title">Tenant Hierarchy</h2>
       <p class="doc-desc">
