@@ -82,10 +82,11 @@ import Layout from '../layouts/Layout.astro';
       <!-- Lines: tenant → users (PC) -->
       <path d="M 280 286 V 322" fill="none" stroke="var(--flow-line)" stroke-width="2"/>
       <text x="290" y="315" font-size="12" font-style="italic" fill="var(--ink-muted)">invites users</text>
-      <path d="M 145 322 H 415" fill="none" stroke="var(--flow-line)" stroke-width="2" stroke-linecap="round"/>
-      <path d="M 145 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
-      <path d="M 280 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
-      <path d="M 415 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 120 322 H 495" fill="none" stroke="var(--flow-line)" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 120 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 245 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 370 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <path d="M 495 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- Lines: tenant → users (SP) -->
       <path d="M 920 286 V 322" fill="none" stroke="var(--flow-line)" stroke-width="2"/>
@@ -96,39 +97,51 @@ import Layout from '../layouts/Layout.astro';
       <path d="M 1055 322 V 361" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
 
       <!-- ==================== USER NODES ==================== -->
-      <!-- PC Tenant Admin (cx=145) -->
+      <!-- PC Tenant Admin (cx=120) -->
       <g>
-        <rect x="90" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
-        <rect x="90" y="365" width="4" height="96" rx="2" fill="var(--admin)"/>
-        <circle cx="145" cy="392" r="16" fill="var(--admin-soft)" stroke="var(--admin)" stroke-width="1.5"/>
-        <text x="145" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--admin)">TA</text>
-        <text x="145" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Tenant Admin</text>
-        <text x="145" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">1 per tenant</text>
+        <rect x="65" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="65" y="365" width="4" height="96" rx="2" fill="var(--admin)"/>
+        <circle cx="120" cy="392" r="16" fill="var(--admin-soft)" stroke="var(--admin)" stroke-width="1.5"/>
+        <text x="120" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--admin)">TA</text>
+        <text x="120" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Tenant Admin</text>
+        <text x="120" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">1 per tenant</text>
       </g>
 
-      <!-- PC GP (cx=280) -->
+      <!-- PC GP (cx=245) -->
       <g>
         <!-- stack effect -->
-        <rect x="230" y="371" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.35"/>
-        <rect x="228" y="369" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.55"/>
-        <rect x="225" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
-        <rect x="225" y="365" width="4" height="96" rx="2" fill="var(--gp)"/>
-        <circle cx="280" cy="392" r="16" fill="var(--gp-soft)" stroke="var(--gp)" stroke-width="1.5"/>
-        <text x="280" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gp)">GP</text>
-        <text x="280" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">GP</text>
-        <text x="280" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+        <rect x="195" y="371" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.35"/>
+        <rect x="193" y="369" width="110" height="96" rx="10" fill="var(--gp-soft)" opacity="0.55"/>
+        <rect x="190" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="190" y="365" width="4" height="96" rx="2" fill="var(--gp)"/>
+        <circle cx="245" cy="392" r="16" fill="var(--gp-soft)" stroke="var(--gp)" stroke-width="1.5"/>
+        <text x="245" y="397" text-anchor="middle" font-size="11" font-weight="700" fill="var(--gp)">GP</text>
+        <text x="245" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">GP</text>
+        <text x="245" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
       </g>
 
-      <!-- PC Staff (cx=415) -->
+      <!-- PC Supervisor (cx=370) -->
       <g>
-        <rect x="365" y="371" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.35"/>
-        <rect x="363" y="369" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.55"/>
-        <rect x="360" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
-        <rect x="360" y="365" width="4" height="96" rx="2" fill="var(--staff)"/>
-        <circle cx="415" cy="392" r="16" fill="var(--staff-soft)" stroke="var(--staff)" stroke-width="1.5"/>
-        <text x="415" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--staff)">ST</text>
-        <text x="415" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Care staff</text>
-        <text x="415" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+        <rect x="320" y="371" width="110" height="96" rx="10" fill="var(--supervisor-soft)" opacity="0.35"/>
+        <rect x="318" y="369" width="110" height="96" rx="10" fill="var(--supervisor-soft)" opacity="0.55"/>
+        <rect x="315" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="315" y="365" width="4" height="96" rx="2" fill="var(--supervisor)"/>
+        <circle cx="370" cy="392" r="16" fill="var(--supervisor-soft)" stroke="var(--supervisor)" stroke-width="1.5"/>
+        <text x="370" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--amber-ink)">SU</text>
+        <text x="370" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Supervisor</text>
+        <text x="370" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
+      </g>
+
+      <!-- PC Staff (cx=495) -->
+      <g>
+        <rect x="445" y="371" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.35"/>
+        <rect x="443" y="369" width="110" height="96" rx="10" fill="var(--staff-soft)" opacity="0.55"/>
+        <rect x="440" y="365" width="110" height="96" rx="10" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
+        <rect x="440" y="365" width="4" height="96" rx="2" fill="var(--staff)"/>
+        <circle cx="495" cy="392" r="16" fill="var(--staff-soft)" stroke="var(--staff)" stroke-width="1.5"/>
+        <text x="495" y="397" text-anchor="middle" font-size="10" font-weight="700" fill="var(--staff)">ST</text>
+        <text x="495" y="428" text-anchor="middle" font-size="12.5" font-weight="700" fill="var(--ink)">Care staff</text>
+        <text x="495" y="447" text-anchor="middle" font-size="10" font-style="italic" fill="var(--ink-muted)">× many</text>
       </g>
 
       <!-- SP Tenant Admin (cx=785) -->
@@ -166,8 +179,8 @@ import Layout from '../layouts/Layout.astro';
       </g>
 
       <!-- Lines: staff → client (PC) -->
-      <path d="M 415 461 V 505" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
-      <text x="425" y="490" font-size="12" font-style="italic" fill="var(--ink-muted)">registers</text>
+      <path d="M 495 461 V 505" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
+      <text x="505" y="490" font-size="12" font-style="italic" fill="var(--ink-muted)">registers</text>
 
       <!-- Lines: staff → client (SP) -->
       <path d="M 1055 461 V 505" fill="none" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arr)"/>
@@ -175,11 +188,11 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- ==================== CLIENT NODES ==================== -->
       <g>
-        <rect x="332" y="513" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.4"/>
-        <rect x="330" y="511" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.65"/>
-        <rect x="328" y="509" width="166" height="52" rx="26" fill="var(--paper)" stroke="var(--line-strong)" stroke-width="1.5"/>
-        <text x="411" y="533" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">Client</text>
-        <text x="411" y="550" text-anchor="middle" font-size="10" fill="var(--ink-muted)">pseudonymised · × many</text>
+        <rect x="416" y="513" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.4"/>
+        <rect x="414" y="511" width="166" height="52" rx="26" fill="var(--paper)" opacity="0.65"/>
+        <rect x="412" y="509" width="166" height="52" rx="26" fill="var(--paper)" stroke="var(--line-strong)" stroke-width="1.5"/>
+        <text x="495" y="533" text-anchor="middle" font-size="13" font-weight="700" fill="var(--ink)">Client</text>
+        <text x="495" y="550" text-anchor="middle" font-size="10" fill="var(--ink-muted)">pseudonymised · × many</text>
       </g>
 
       <g>
@@ -222,7 +235,7 @@ import Layout from '../layouts/Layout.astro';
         tenant type. They send email invitations from inside Amagi.
       </p>
       <ul>
-        <li><span class="dot" style="background:var(--gp)"></span><span><strong>GP practice invites:</strong> GPs, Care staff.</span></li>
+        <li><span class="dot" style="background:var(--gp)"></span><span><strong>GP practice invites:</strong> GPs, Supervisors, Care staff.</span></li>
         <li><span class="dot" style="background:var(--sp)"></span><span><strong>Community team invites:</strong> Supervisors, Care staff.</span></li>
       </ul>
     </div>
@@ -245,10 +258,10 @@ import Layout from '../layouts/Layout.astro';
     <h3>The ground rules</h3>
     <ul>
       <li><strong>Each tenant is walled off.</strong> One tenant can never see another tenant's clients, staff, observations, or alerts.</li>
-      <li><strong>Roles are tenant-specific.</strong> A GP only exists inside a GP practice. A Supervisor only exists inside a community team.</li>
-      <li><strong>Care staff exists in both.</strong> The role is the same, but the observation forms and workflows adapt to the tenant type.</li>
+      <li><strong>GP is tenant-specific.</strong> It only exists inside a primary care tenant — a GP practice.</li>
+      <li><strong>Supervisor and Care staff exist in both tenant types.</strong> The role is the same, but the observation forms and workflows adapt to the tenant type.</li>
       <li><strong>Clients follow their tenant.</strong> A client registered by a GP practice stays with that practice — but can be referred to a community team for post-diagnosis support without leaking clinical notes.</li>
-      <li><strong>The System Admin is the only shared human.</strong> Everything below them is scoped strictly to a single tenant.</li>
+      <li><strong>System Admin sits outside every tenant.</strong> Every other role belongs to exactly one tenant; System Admin doesn't belong to any.</li>
     </ul>
   </div>
 
