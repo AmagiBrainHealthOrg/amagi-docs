@@ -26,7 +26,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="actor-dot staff" aria-hidden="true"></span>
         <div>
           <strong>Care staff</strong>
-          <span>Notices concerns, logs observations, administers cognitive screeners.</span>
+          <span>Notices concerns, logs observations, records cognitive screening results.</span>
         </div>
       </div>
       <div class="actor">
@@ -60,7 +60,7 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <div class="rag" aria-label="Traffic-light urgency system used throughout">
-      <span class="rag-item"><span class="rag-dot g" aria-hidden="true"></span> Green — routine (72&nbsp;hr)</span>
+      <span class="rag-item"><span class="rag-dot g" aria-hidden="true"></span> Green — routine (next scheduled review)</span>
       <span class="rag-item"><span class="rag-dot a" aria-hidden="true"></span> Amber — high priority (48&nbsp;hr)</span>
       <span class="rag-item"><span class="rag-dot r" aria-hidden="true"></span> Red — urgent (4&nbsp;hr)</span>
     </div>
@@ -98,12 +98,13 @@ import Layout from '../layouts/Layout.astro';
         <div class="stage-header">
           <h2 class="stage-title">Cognitive Screening</h2>
           <span class="status-chip">screening</span>
+          <span class="phase-chip">Post-P1B</span>
         </div>
-        <p class="stage-sub">When observations turn red — or a concerning pattern emerges — the client moves into structured screening.</p>
+        <p class="stage-sub">When observations turn red — or a concerning pattern emerges — the client moves into structured screening. The screener itself runs outside Amagi; recording its result is in scope.</p>
         <ul class="stage-list">
-          <li>A trained staff member administers a validated cognitive screener with the client.</li>
+          <li>A trained staff member runs a validated cognitive screener independently, then records the result in Amagi.</li>
           <li>Amagi interprets the score instantly and flags borderline results for extra care.</li>
-          <li>Supervisor reviews the outcome and, if warranted, drafts a GP Referral Summary.</li>
+          <li>Supervisor reviews the outcome and, if warranted, generates a GP summary.</li>
         </ul>
         <div class="stage-footer">
           <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
@@ -120,6 +121,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="stage-header">
           <h2 class="stage-title">Memory Clinic Referral</h2>
           <span class="status-chip">referred</span>
+          <span class="phase-chip">Post-P1B</span>
         </div>
         <p class="stage-sub">The supervisor formalises the referral. Amagi starts the clock so nothing quietly slips.</p>
         <ul class="stage-list">
@@ -142,6 +144,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="stage-header">
           <h2 class="stage-title">Awaiting Appointment</h2>
           <span class="status-chip">waiting</span>
+          <span class="phase-chip">Post-P1B</span>
         </div>
         <p class="stage-sub">Memory-clinic queues are long. Amagi keeps the client visible through the wait.</p>
         <ul class="stage-list">
@@ -173,7 +176,7 @@ import Layout from '../layouts/Layout.astro';
           <li>GP records the diagnosis reflected from the memory clinic's outcome — clinic date, diagnosing clinician and organisation, standard clinical codes.</li>
           <li>Medications are confirmed separately — matched to the NHS dictionary.</li>
           <li>If a Lewy body diagnosis meets certain antipsychotic drugs, an urgent safety alert fires.</li>
-          <li>An annual review reminder is armed; the observation form quietly switches to its post-diagnosis version.</li>
+          <li>An annual review reminder is armed (Post-P1B); the observation form quietly switches to its post-diagnosis version.</li>
         </ul>
         <div class="highlight">
           <strong>Built-in safety check —</strong> the Lewy body / antipsychotic combination can be life-threatening. Amagi surfaces it the moment it appears.
@@ -196,9 +199,8 @@ import Layout from '../layouts/Layout.astro';
         <p class="stage-sub">Diagnosis isn't the finish line. Amagi structures the long tail of support that follows.</p>
         <ul class="stage-list">
           <li>Staff continue logging observations — the questions now focus on living well with a diagnosis.</li>
-          <li>A support checklist covers the essentials: Lasting Power of Attorney, DVLA notification, home safety, advance care planning.</li>
-          <li>Carer needs are formally assessed.</li>
-          <li>Supervisors can generate an MDT summary and refer to a social prescriber when community support would help.</li>
+          <li>A support checklist covers the essentials: Lasting Power of Attorney, DVLA notification, home safety, advance care planning (Post-P1B).</li>
+          <li>Supervisors can generate a GP summary and refer to a social prescriber when community support would help (Post-P1B).</li>
         </ul>
         <div class="stage-footer">
           <span class="role-chip"><span class="actor-dot staff" aria-hidden="true"></span> Care staff</span>
@@ -215,6 +217,7 @@ import Layout from '../layouts/Layout.astro';
         <div class="stage-header">
           <h2 class="stage-title">Discharge</h2>
           <span class="status-chip">discharged</span>
+          <span class="phase-chip">Post-P1B</span>
         </div>
         <p class="stage-sub">When the client's Amagi journey formally ends, it ends cleanly and compliantly.</p>
         <ul class="stage-list">
@@ -341,6 +344,13 @@ import Layout from '../layouts/Layout.astro';
     background: var(--amber-soft); color: var(--amber-ink);
     letter-spacing: 0.06em; text-transform: uppercase;
     font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+  .phase-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 11px; font-weight: 600;
+    padding: 4px 10px; border-radius: 999px;
+    background: var(--line); color: var(--ink-muted);
+    letter-spacing: 0.06em; text-transform: uppercase;
   }
   .stage-sub { color: var(--ink-soft); margin: 0 0 18px; font-size: 15px; }
   .stage-list { list-style: none; padding: 0; margin: 0 0 18px; }

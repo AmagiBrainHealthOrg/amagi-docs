@@ -59,7 +59,7 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="550" cy="450" r="18" fill="var(--red-soft)" stroke="var(--offramp-line)" stroke-width="1.5"/>
         <text x="550" y="456" text-anchor="middle" font-size="11" font-weight="700" fill="var(--offramp-line)">OFF</text>
         <text x="580" y="450" font-size="16" font-weight="700" fill="var(--ink)">Early Discharge</text>
-        <text x="846" y="450" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">EARLY_DISCHARGE</text>
+        <text x="846" y="450" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">EARLY_DISCHARGE · POST-P1B</text>
         <line x1="536" y1="470" x2="844" y2="470" stroke="var(--line)"/>
         <circle cx="546" cy="486" r="3.5" fill="var(--supervisor)"/>
         <text x="556" y="490" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> records reason &amp; date</text>
@@ -109,13 +109,13 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="90" cy="255" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
         <text x="90" y="261" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">02</text>
         <text x="120" y="255" font-size="16" font-weight="700" fill="var(--ink)">Cognitive Screening</text>
-        <text x="406" y="255" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">SCREENING</text>
+        <text x="406" y="255" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">SCREENING · POST-P1B</text>
         <line x1="76" y1="275" x2="404" y2="275" stroke="var(--line)"/>
         <circle cx="86" cy="291" r="3.5" fill="var(--staff)"/>
-        <text x="94" y="295" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> administers the screener</text>
+        <text x="94" y="295" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> runs the screener independently, records the result</text>
         <circle cx="86" cy="310" r="3.5" fill="var(--supervisor)"/>
-        <text x="94" y="314" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> interprets, drafts referral summary</text>
-        <text x="76" y="330" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Client Overview &nbsp;·&nbsp; Client Record</text>
+        <text x="94" y="314" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> interprets, generates GP summary</text>
+        <text x="76" y="330" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screen —</tspan> Client Record</text>
       </g>
 
       <!-- 02 → 03 -->
@@ -128,7 +128,7 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="90" cy="385" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
         <text x="90" y="391" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">03</text>
         <text x="120" y="385" font-size="16" font-weight="700" fill="var(--ink)">Memory Clinic Referral</text>
-        <text x="406" y="385" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">REFERRED</text>
+        <text x="406" y="385" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">REFERRED · POST-P1B</text>
         <line x1="76" y1="405" x2="404" y2="405" stroke="var(--line)"/>
         <circle cx="86" cy="421" r="3.5" fill="var(--supervisor)"/>
         <text x="94" y="425" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> logs referral destination &amp; date</text>
@@ -147,7 +147,7 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="90" cy="515" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
         <text x="90" y="521" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">04</text>
         <text x="120" y="515" font-size="16" font-weight="700" fill="var(--ink)">Awaiting Appointment</text>
-        <text x="406" y="515" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">WAITING</text>
+        <text x="406" y="515" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">WAITING · POST-P1B</text>
         <line x1="76" y1="535" x2="404" y2="535" stroke="var(--line)"/>
         <circle cx="86" cy="551" r="3.5" fill="var(--system)"/>
         <text x="94" y="555" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> raises check-in &amp; chase-up alerts</text>
@@ -190,7 +190,7 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="86" cy="811" r="3.5" fill="var(--staff)"/>
         <text x="94" y="815" font-size="12" fill="var(--ink)"><tspan font-weight="600">Care staff</tspan> logs post-diagnosis observations</text>
         <circle cx="86" cy="830" r="3.5" fill="var(--supervisor)"/>
-        <text x="94" y="834" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> generates MDT summary, refers to SP</text>
+        <text x="94" y="834" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> generates GP summary, refers to SP (Post-P1B)</text>
         <text x="76" y="850" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Log an Observation &nbsp;·&nbsp; Client Record</text>
       </g>
 
@@ -204,7 +204,7 @@ import Layout from '../layouts/Layout.astro';
         <circle cx="90" cy="905" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
         <text x="90" y="911" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">07</text>
         <text x="120" y="905" font-size="16" font-weight="700" fill="var(--ink)">Discharge</text>
-        <text x="406" y="905" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">DISCHARGED</text>
+        <text x="406" y="905" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">DISCHARGED · POST-P1B</text>
         <line x1="76" y1="925" x2="404" y2="925" stroke="var(--line)"/>
         <circle cx="86" cy="941" r="3.5" fill="var(--supervisor)"/>
         <text x="94" y="945" font-size="12" fill="var(--ink)"><tspan font-weight="600">Supervisor</tspan> records discharge &amp; reason</text>
@@ -260,19 +260,20 @@ import Layout from '../layouts/Layout.astro';
     <div class="stage-row">
       <div class="stage-num">
         <span class="badge">02</span>
-        <span class="status">Screening</span>
+        <span class="status">Screening · Post-P1B</span>
       </div>
       <div>
         <h3 class="stage-title">Cognitive Screening</h3>
+        <p class="stage-note">The screener itself stays out of scope — staff run a validated instrument independently, outside Amagi. Recording the result is in scope.</p>
         <div class="stage-actors">
-          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">administers a validated cognitive screener with the client.</span></span></div>
-          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">interprets the score, drafts the GP referral summary.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">records the result of a cognitive screener run independently with the client.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">interprets the score, generates a GP summary.</span></span></div>
           <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">interprets scores automatically and flags borderline results.</span></span></div>
         </div>
       </div>
       <div class="stage-screens">
-        <div class="screen-row"><span class="screen-name">Client Overview</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Everything known about the client; start a screener from here.</span></div>
-        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Review the screening result, draft the referral summary.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Record the screening result here.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">Review the screening result, generate the GP summary.</span></div>
       </div>
     </div>
 
@@ -280,7 +281,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="stage-row">
       <div class="stage-num">
         <span class="badge">03</span>
-        <span class="status">Referred</span>
+        <span class="status">Referred · Post-P1B</span>
       </div>
       <div>
         <h3 class="stage-title">Memory Clinic Referral</h3>
@@ -298,7 +299,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="stage-row">
       <div class="stage-num">
         <span class="badge">04</span>
-        <span class="status">Waiting</span>
+        <span class="status">Waiting · Post-P1B</span>
       </div>
       <div>
         <h3 class="stage-title">Awaiting Appointment</h3>
@@ -324,13 +325,13 @@ import Layout from '../layouts/Layout.astro';
         <h3 class="stage-title">Diagnosis Reflected</h3>
         <div class="stage-actors">
           <div class="stage-actor"><span class="dot" style="background:var(--gp)"></span><span><span class="role">GP</span> — <span class="verb">records the diagnosis reflected from the memory clinic's outcome (SNOMED coded), and confirms or rejects each suggested medication (NHS coded).</span></span></div>
-          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">fires the Lewy-body / antipsychotic safety alert, arms the annual review reminder, and quietly switches the observation form to its post-diagnosis version.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">fires the Lewy-body / antipsychotic safety alert, arms the annual review reminder (Post-P1B), and quietly switches the observation form to its post-diagnosis version.</span></span></div>
         </div>
       </div>
       <div class="stage-screens">
         <div class="screen-row"><span class="screen-name">Record Diagnosis</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Record the diagnosis reflected from the memory clinic and confirm medications matched to NHS coding.</span></div>
         <div class="screen-row"><span class="screen-name">GP Alerts</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Safety alerts, including the Lewy-body medication check.</span></div>
-        <div class="screen-row"><span class="screen-name">Client Overview</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">The GP's summary view of the client.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">The GP's view of the client.</span></div>
       </div>
     </div>
 
@@ -344,13 +345,13 @@ import Layout from '../layouts/Layout.astro';
         <h3 class="stage-title">Post-Diagnosis Care</h3>
         <div class="stage-actors">
           <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">keeps logging observations — the form now focuses on living well with a diagnosis.</span></span></div>
-          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">walks through the post-diagnosis checklist (Lasting Power of Attorney, DVLA, home safety, advance care planning), assesses carer needs, drafts the MDT summary, refers to a social prescriber where community support helps.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">walks through the post-diagnosis checklist (Lasting Power of Attorney, DVLA, home safety, advance care planning), generates a GP summary, refers to a social prescriber where community support helps (all Post-P1B).</span></span></div>
           <div class="stage-actor"><span class="dot" style="background:var(--sp)"></span><span><span class="role">Social prescriber</span> — <span class="verb">coordinates community support and sees status only — never clinical notes.</span></span></div>
         </div>
       </div>
       <div class="stage-screens">
         <div class="screen-row"><span class="screen-name">Log an Observation</span><span class="screen-role"><span class="dot" style="background:var(--staff)"></span>Care staff</span><span class="screen-desc">Same screen — form auto-switches to the post-diagnosis variant.</span></div>
-        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">MDT summary, checklist, carer assessment, social-prescribing referral.</span></div>
+        <div class="screen-row"><span class="screen-name">Client Record</span><span class="screen-role"><span class="dot" style="background:var(--supervisor)"></span>Supervisor</span><span class="screen-desc">GP summary, support checklist, social-prescribing referral (Post-P1B).</span></div>
       </div>
     </div>
 
@@ -358,7 +359,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="stage-row">
       <div class="stage-num">
         <span class="badge">07</span>
-        <span class="status">Discharged</span>
+        <span class="status">Discharged · Post-P1B</span>
       </div>
       <div>
         <h3 class="stage-title">Discharge</h3>
@@ -376,7 +377,7 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Off-ramp detail -->
   <aside class="offramp-block">
-    <div class="tag">Off-ramp</div>
+    <div class="tag">Off-ramp · Post-P1B</div>
     <h3>Early Discharge — available from stages 01 – 06</h3>
     <p>
       A supervisor can end a client's journey at any point before formal discharge — because the client moves
@@ -497,6 +498,10 @@ import Layout from '../layouts/Layout.astro';
   .stage-title {
     font-size: 17px; font-weight: 700; letter-spacing: -0.01em;
     margin: 0 0 8px;
+  }
+  .stage-note {
+    font-size: 13px; color: var(--ink-muted); font-style: italic;
+    margin: 0 0 10px;
   }
   .stage-actors {
     display: flex; flex-direction: column; gap: 6px;
