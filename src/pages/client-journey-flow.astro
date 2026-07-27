@@ -158,18 +158,18 @@ import Layout from '../layouts/Layout.astro';
 
       <!-- 04 → 05 -->
       <line x1="240" y1="590" x2="240" y2="613" stroke="var(--flow-line)" stroke-width="2" marker-end="url(#arrow-main)"/>
-      <text x="250" y="606" font-size="11" font-style="italic" fill="var(--ink-muted)">GP confirms diagnosis</text>
+      <text x="250" y="606" font-size="11" font-style="italic" fill="var(--ink-muted)">GP reflects diagnosis</text>
 
-      <!-- 05 Diagnosis Confirmed -->
+      <!-- 05 Diagnosis Reflected -->
       <g>
         <rect x="60" y="615" width="360" height="105" rx="12" fill="var(--card)" stroke="var(--line)" stroke-width="1"/>
         <circle cx="90" cy="645" r="18" fill="var(--amber-soft)" stroke="var(--amber)" stroke-width="1.5"/>
         <text x="90" y="651" text-anchor="middle" font-size="14" font-weight="800" fill="var(--amber-ink)">05</text>
-        <text x="120" y="645" font-size="16" font-weight="700" fill="var(--ink)">Diagnosis Confirmed</text>
+        <text x="120" y="645" font-size="16" font-weight="700" fill="var(--ink)">Diagnosis Reflected</text>
         <text x="406" y="645" text-anchor="end" font-size="10" font-family="ui-monospace,Menlo,monospace" letter-spacing="0.08em" fill="var(--ink-muted)">DIAGNOSED</text>
         <line x1="76" y1="665" x2="404" y2="665" stroke="var(--line)"/>
         <circle cx="86" cy="681" r="3.5" fill="var(--gp)"/>
-        <text x="94" y="685" font-size="12" fill="var(--ink)"><tspan font-weight="600">GP</tspan> confirms diagnosis &amp; medications</text>
+        <text x="94" y="685" font-size="12" fill="var(--ink)"><tspan font-weight="600">GP</tspan> reflects diagnosis, confirms medications</text>
         <circle cx="86" cy="700" r="3.5" fill="var(--system)"/>
         <text x="94" y="704" font-size="12" fill="var(--ink)"><tspan font-weight="600">Amagi</tspan> fires the Lewy-body safety check</text>
         <text x="76" y="720" font-size="12" fill="var(--amber-ink)"><tspan font-weight="600">Screens —</tspan> Record Diagnosis &nbsp;·&nbsp; GP Alerts</text>
@@ -243,7 +243,7 @@ import Layout from '../layouts/Layout.astro';
       <div>
         <h3 class="stage-title">Registration</h3>
         <div class="stage-actors">
-          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">registers the client under a pseudonym, logs the first observations, may suggest a diagnosis for the GP to confirm later.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--staff)"></span><span><span class="role">Care staff</span> — <span class="verb">registers the client under a pseudonym, logs the first observations, may suggest medications for the GP to confirm later. No diagnosis is captured at this stage.</span></span></div>
           <div class="stage-actor"><span class="dot" style="background:var(--supervisor)"></span><span><span class="role">Supervisor</span> — <span class="verb">works through the review queue, overrides the urgency rating with a written reason if needed.</span></span></div>
           <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">assigns a traffic-light urgency to each observation and notifies the right supervisor.</span></span></div>
         </div>
@@ -321,14 +321,14 @@ import Layout from '../layouts/Layout.astro';
         <span class="status">Diagnosed</span>
       </div>
       <div>
-        <h3 class="stage-title">Diagnosis Confirmed</h3>
+        <h3 class="stage-title">Diagnosis Reflected</h3>
         <div class="stage-actors">
-          <div class="stage-actor"><span class="dot" style="background:var(--gp)"></span><span><span class="role">GP</span> — <span class="verb">confirms or rejects each suggested diagnosis and medication using standard clinical codes.</span></span></div>
+          <div class="stage-actor"><span class="dot" style="background:var(--gp)"></span><span><span class="role">GP</span> — <span class="verb">records the diagnosis reflected from the memory clinic's outcome (SNOMED coded), and confirms or rejects each suggested medication (NHS coded).</span></span></div>
           <div class="stage-actor"><span class="dot" style="background:var(--system)"></span><span><span class="role">Amagi</span> — <span class="verb">fires the Lewy-body / antipsychotic safety alert, arms the annual review reminder, and quietly switches the observation form to its post-diagnosis version.</span></span></div>
         </div>
       </div>
       <div class="stage-screens">
-        <div class="screen-row"><span class="screen-name">Record Diagnosis</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Confirm the diagnosis and medications matched to NHS coding.</span></div>
+        <div class="screen-row"><span class="screen-name">Record Diagnosis</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Record the diagnosis reflected from the memory clinic and confirm medications matched to NHS coding.</span></div>
         <div class="screen-row"><span class="screen-name">GP Alerts</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">Safety alerts, including the Lewy-body medication check.</span></div>
         <div class="screen-row"><span class="screen-name">Client Overview</span><span class="screen-role"><span class="dot" style="background:var(--gp)"></span>GP</span><span class="screen-desc">The GP's summary view of the client.</span></div>
       </div>

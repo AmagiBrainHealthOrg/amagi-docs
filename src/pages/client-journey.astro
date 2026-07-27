@@ -40,7 +40,7 @@ import Layout from '../layouts/Layout.astro';
         <span class="actor-dot gp" aria-hidden="true"></span>
         <div>
           <strong>GP</strong>
-          <span>Confirms diagnosis and medication, flags safety issues, closes the loop.</span>
+          <span>Reflects the diagnosis from the memory clinic, confirms medication, flags safety issues, closes the loop.</span>
         </div>
       </div>
       <div class="actor">
@@ -80,7 +80,7 @@ import Layout from '../layouts/Layout.astro';
         <p class="stage-sub">A member of care staff spots something — memory slips, unusual behaviour, family worry — and opens a new client record.</p>
         <ul class="stage-list">
           <li>Client is registered under a pseudonym; personal details are stored separately for privacy.</li>
-          <li>Staff can suggest a likely diagnosis and current medications for the GP to confirm later.</li>
+          <li>Staff can suggest current medications for the GP to confirm later. No diagnosis is captured here — diagnosis is only ever reflected later, from an external memory clinic outcome.</li>
           <li>Early observations are logged; Amagi assigns a traffic-light urgency, and a supervisor reviews.</li>
         </ul>
         <div class="stage-footer">
@@ -165,13 +165,13 @@ import Layout from '../layouts/Layout.astro';
       <div class="stage-num" aria-hidden="true">05</div>
       <div class="stage-card">
         <div class="stage-header">
-          <h2 class="stage-title">Diagnosis Confirmed</h2>
+          <h2 class="stage-title">Diagnosis Reflected</h2>
           <span class="status-chip">diagnosed</span>
         </div>
-        <p class="stage-sub">The GP reviews the picture staff have built, confirms the diagnosis, and sets the plan in motion.</p>
+        <p class="stage-sub">The memory clinic makes the diagnosis; the GP reflects that outcome into Amagi and sets the plan in motion.</p>
         <ul class="stage-list">
-          <li>GP confirms or rejects each suggested diagnosis, using standard clinical codes.</li>
-          <li>Medications are confirmed the same way — matched to the NHS dictionary.</li>
+          <li>GP records the diagnosis reflected from the memory clinic's outcome — clinic date, diagnosing clinician and organisation, standard clinical codes.</li>
+          <li>Medications are confirmed separately — matched to the NHS dictionary.</li>
           <li>If a Lewy body diagnosis meets certain antipsychotic drugs, an urgent safety alert fires.</li>
           <li>An annual review reminder is armed; the observation form quietly switches to its post-diagnosis version.</li>
         </ul>
